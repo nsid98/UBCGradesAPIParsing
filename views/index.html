@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/public/javascripts/FindHighestGPA.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <title>Please work</title>
 </head>
 <body>
-    <h1>Title is this now</h1>
+    <h1>UBC Grades</h1>
 
     <script>
-    $.getJSON("https://ubcgrades.com/api/grades/2018W/MATH/100", function(data){
-        var items = [];
-
+        
+    $.getJSON("https://ubcgrades.com/api/grades/2018W", function(data){
+       
         $.each( data, function(key, val){
-            items.push("<li id = '" + key + "'>" + val + "</li>");
-            console.log("Key is " + key + " and value is " + JSON.stringify(val));
+            findhighestGPA(val);  
         }); 
+        
     });
 
     </script>
